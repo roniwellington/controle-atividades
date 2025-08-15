@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dashboard de Atividades</title>
+<!-- Chart.js (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/dash.css">
+</head>
+<body>
+  <header>
+    <div class="wrap head">
+      <h1>📊 Dashboard de Atividades</h1>
+      <a class="back" href="../index.html" onclick="if(!this.href) history.back(); return true;">← Voltar</a>
+    </div>
+    <div class="wrap filters">
+      <div>
+        <label for="inicio">Data inicial</label>
+        <input type="date" id="inicio"/>
+      </div>
+      <div>
+        <label for="fim">Data final</label>
+        <input type="date" id="fim"/>
+      </div>
+      <div>
+        <label for="fStatus">Status</label>
+        <select id="fStatus">
+          <option value="">Todos</option>
+          <option>Não Iniciada</option>
+          <option>Em andamento</option>
+          <option>Pulada</option>
+          <option>Concluída</option>
+        </select>
+      </div>
+      <div style="display:flex; align-items:end; gap:8px;">
+        <button id="aplicar">Aplicar filtros</button>
+        <button id="limpar" style="background:transparent; color:var(--text); border:1px solid var(--border)">Limpar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Cards -->
+    <section class="grid-cards" id="cards">
+      <div class="card"><h3>Total</h3><div class="value" id="kTotal">0</div></div>
+      <div class="card"><h3>Concluídas</h3><div class="value ok" id="kDone">0</div></div>
+      <div class="card"><h3>Em andamento</h3><div class="value warn" id="kDoing">0</div></div>
+      <div class="card"><h3>Puladas</h3><div class="value skip" id="kSkipped">0</div></div>
+      <div class="card"><h3>Não iniciadas</h3><div class="value" id="kNot">0</div></div>
+      <div class="card"><h3>Taxa de conclusão</h3><div class="value acc" id="kRate">0%</div></div>
+    </section>
+
+    <!-- Charts -->
+    <section class="panels">
+      <div class="panel"><h2>Distribuição por Status</h2><canvas id="chartStatus"></canvas></div>
+      <div class="panel"><h2>Atividades por Categoria</h2><canvas id="chartCategoria"></canvas></div>
+      <div class="panel span-6"><h2>Concluídas ao longo do tempo</h2><canvas id="chartLinha"></canvas></div>
+    </section>
+
+    <!-- Storytelling -->
+    <section class="story" id="story">
+      <h2>História das suas atividades</h2>
+      <p id="narrativa">Carregando…</p>
+      <p id="extras"></p>
+    </section>
+  </main>
+
+  <footer>Dashboard das minhas atividades</footer>
+
+  <script src="../assets/js/dash.js"></script>
+
+
+</body>
+</html>

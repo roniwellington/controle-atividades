@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controle de Atividades</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<h1>Controle de Atividades</h1>
+<a href="./paginas/dash.html">Ver Dashboard</a>
+
+<form id="atividadeForm">
+    <select id="categoria" required>
+        <option value="">Selecione a Categoria</option>
+        <option value="Atividade Física">Atividade Física</option>
+        <option value="Leitura">Leitura</option>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Estudo">Estudo</option>
+        <option value="Hobby">Hobby</option>
+        <option value="Outros">Outros</option>
+    </select>
+
+    <select id="subcategoria" required>
+        <option value="">Selecione a Subcategoria</option>
+    </select>
+
+    <input type="text" id="atividade" placeholder="Atividade" required>
+    <textarea id="descricao" placeholder="Descrição da Atividade"></textarea>
+
+    <select id="status" required>
+        <option value="">Selecione o Status</option>
+        <option value="Não Iniciada">Não Iniciada</option>
+        <option value="Em andamento">Em andamento</option>
+        <option value="Pulada">Pulada</option>
+        <option value="Concluída">Concluída</option>
+    </select>
+
+    <input type="date" id="dataInicio" required>
+    <input type="time" id="horaInicio" readonly>
+    <input type="time" id="horaFim" readonly>
+    <input type="date" id="dataFim" readonly>
+
+    <button type="submit">Salvar Atividade</button>
+</form>
+
+<div class="filtros">
+    <label for="filtroStatus">Filtrar por Status:</label>
+    <select id="filtroStatus">
+        <option value="">Todos</option>
+        <option value="Não Iniciada">Não Iniciada</option>
+        <option value="Em andamento">Em andamento</option>
+        <option value="Pulada">Pulada</option>
+        <option value="Concluída">Concluída</option>
+    </select>
+    
+    <button id="exportarCSV">Exportar CSV</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Subcategoria</th>
+            <th>Atividade</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Data Início</th>
+            <th>Hora Início</th>
+            <th>Hora Fim</th>
+            <th>Data Fim</th>
+            <th class="center">Ações</th>
+        </tr>
+    </thead>
+    <tbody id="listaAtividades"></tbody>
+</table>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
