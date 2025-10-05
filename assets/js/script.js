@@ -122,7 +122,7 @@ function fecharFormulario() {
 // ======= SUBCATEGORIAS DINÂMICAS =======
 const categorias = {
   "Atividade Física": ["Caminhada", "Ciclismo", "Academia", "Outros"],
-  "Leitura": ["Ficção-Científica", "Fantasia", "Divulgação Científica", "Ciências", "Faculdade"],
+  "Leitura": ["Ficção-Científica", "Fantasia", "Divulgação Científica", "Ciências", "Faculdade", "Tecnologia"],
   "Trabalho": ["Reunião", "Projeto", "Relatório", "Outros"],
   "Estudo": ["Curso Online", "Faculdade", "Certificação", "Outros"],
   "Hobby": ["Música", "Artesanato", "Fotografia", "Outros"],
