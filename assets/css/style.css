@@ -181,3 +181,18 @@ tr:nth-child(even) {
 .form-container button:hover {
   background: linear-gradient(135deg, #2980b9, #1f6391);
 }
+
+/* Container com rolagem para a tabela */
+.table-container {
+  max-height: 650px; /* altura máxima antes de ativar o scroll */
+  overflow-y: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Deixar o cabeçalho fixo */
+table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}

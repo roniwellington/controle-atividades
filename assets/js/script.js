@@ -9,13 +9,33 @@ function renderTabela() {
   tbody.innerHTML = "";
   atividades.forEach((a, index) => {
     let tr = document.createElement("tr");
+
+
+    // Definir cor do status
+    let statusColor = "";
+    switch (a.status.toLowerCase()) {
+      //case "não iniciada":
+       // statusColor = "background-color: white; color: black;";
+       // break;
+      case "em andamento":
+        statusColor = "background-color: yellow; color: black;";
+        break;
+      case "concluída":
+        statusColor = "background-color: lightgreen; color: black;";
+        break;
+      case "pulada":
+        statusColor = "background-color: red; color: white;";
+        break;
+    }
+
+
     tr.innerHTML = `
       <td>${a.id}</td>
       <td>${a.categoria}</td>
       <td>${a.subcategoria}</td>
       <td>${a.atividade}</td>
       <td>${a.descricao}</td>
-      <td>${a.status}</td>
+      <td style="${statusColor}">${a.status}</td>
       <td>${a.dataInicio}</td>
       <td>${a.horaInicio || "-"}</td>
       <td>${a.horaFim || "-"}</td>
